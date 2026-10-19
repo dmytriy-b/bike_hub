@@ -1,0 +1,200 @@
+/* ==========================================
+   ОБЩИЕ СТИЛИ (для всех страниц)
+   ========================================== */
+body {
+    background-color: #c2ddfb;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 30px;
+    color: #333;
+}
+
+/* Кнопка Назад */
+.back-btn {
+    display: inline-block;
+    margin-bottom: 25px;
+    background-color: #aad2ff;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background-color 0.2s, transform 0.1s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.back-btn:hover {
+    background-color: #64acff;
+    transform: translateY(-2px);
+}
+
+/* Заголовки */
+.page-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.page-title h1 {
+    margin: 0 0 10px 0;
+    font-size: 28px;
+}
+
+.page-title p {
+    margin: 0;
+    color: #666;
+}
+
+/* ==========================================
+   ГЛАВНАЯ СТРАНИЦА (index.html)
+   ========================================== */
+.bike-list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.bike-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e0e0e0;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+}
+
+.bike-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    border-color: #007bff;
+}
+
+.bike-card img {
+    width: 280px;
+    height: auto;
+    display: block;
+}
+
+.bike-card h3 {
+    margin: 15px 0 0 0;
+    font-size: 18px;
+}
+
+/* ==========================================
+   СТРАНИЦА ДЕТАЛЕЙ (bike-details.html)
+   ========================================== */
+.interactive-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.parts-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 220px;
+}
+
+.part-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e0e0e0;
+    transition: all 0.2s ease;
+}
+
+.part-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    border-color: #007bff;
+}
+
+.part-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.part-card h4 {
+    margin: 5px 0 0 0;
+    font-size: 15px;
+    color: #222;
+}
+
+.part-card span {
+    font-size: 12px;
+    color: #888;
+}
+
+.bike-center {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    box-sizing: border-box;
+}
+
+.bike-center img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ==========================================
+   СТРАНИЦА КОНКРЕТНОЙ ДЕТАЛИ (wheel-detail.html)
+   ========================================== */
+.part-info-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.part-info-image img {
+    width: 250px;
+    height: auto;
+    display: block;
+}
+
+.part-info-text h2 {
+    margin-top: 0;
+    font-size: 22px;
+}
+
+.part-info-text ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0 0;
+}
+
+.part-info-text li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 15px;
+}
+
+.part-info-text li:last-child {
+    border-bottom: none;
+}
