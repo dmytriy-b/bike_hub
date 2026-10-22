@@ -1,37 +1,86 @@
-
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Интеракт каталог</title>
+    <title>Интерактивный каталог велосипедов</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Обернули заголовки в класс page-title -->
+
     <div class="page-title">
-        <h1>Mountain bike catalog</h1>
-        <p>Select a model to view details</p>
+        <h1>Каталог велосипедов</h1>
+        <p>Выберите производителю или модели для просмотра детальной структуры:</p>
     </div>
+
+    <!-- Блок логотипов брендов -->
+    <div class="brands-section">
+        <h3>Бренды производителей</h3>
+        <div class="brands-grid">
+            <button class="brand-card active" onclick="filterBikes('all')">
+                <span>Все бренды</span>
+            </button>
+            <button class="brand-card" onclick="filterBikes('trek')">
+                <strong>TREK</strong>
+            </button>
+            <button class="brand-card" onclick="filterBikes('specialized')">
+                <strong>SPECIALIZED</strong>
+            </button>
+            <button class="brand-card" onclick="filterBikes('giant')">
+                <strong>GIANT</strong>
+            </button>
+            <button class="brand-card" onclick="filterBikes('scott')">
+                <strong>SCOTT</strong>
+            </button>
+        </div>
+    </div>
+
+    <!-- Список велосипедов с фильтрацией по data-brand -->
     <div class="bike-list">
-        <!-- Ссылка вокруг первого велосипеда -->
-        <a href="bike-details.html" class="bike-card">
-            <img src="img/bike1.png" alt="Горный велосипед">
-            <h3>Горный велосипед Trek</h3>
+        <a href="bike-details.html" class="bike-card" data-brand="trek">
+            <img src="images/bike.png" alt="Горный велосипед Trek">
+            <h3>Trek Marlin 7</h3>
+            <span>Горный велосипед</span>
         </a>
 
-        <!-- Вторая карточка (пока ведёт на ту же страницу или заглушку #) -->
-        <a href="bike-details.html" class="bike-card">
-            <img src="img/bike2.png" alt="Шоссейный велосипед">
-            <h3>Шоссейный велосипед Scott</h3>
+        <a href="bike-details.html" class="bike-card" data-brand="specialized">
+            <img src="images/bike.png" alt="Specialized Rockhopper">
+            <h3>Specialized Rockhopper</h3>
+            <span>Кросс-кантри</span>
         </a>
 
-        <!-- Вторая карточка (пока ведёт на ту же страницу или заглушку #) -->
-        <a href="bike-details.html" class="bike-card">
-            <img src="img/bike3.png" alt="Шоссейный велосипед">
-            <h3>Шоссейный велосипед Giant</h3>
+        <a href="bike-details.html" class="bike-card" data-brand="giant">
+            <img src="images/bike.png" alt="Giant Talon">
+            <h3>Giant Talon 1</h3>
+            <span>Горный велосипед</span>
+        </a>
+
+        <a href="bike-details.html" class="bike-card" data-brand="scott">
+            <img src="images/bike.png" alt="Scott Aspect">
+            <h3>Scott Aspect 940</h3>
+            <span>Трейловый велосипед</span>
         </a>
     </div>
+
+    <!-- Скрипт фильтрации -->
+    <script>
+        function filterBikes(brand) {
+            // Переключаем активную кнопку
+            const buttons = document.querySelectorAll('.brand-card');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+
+            // Фильтруем карточки велосипедов
+            const bikes = document.querySelectorAll('.bike-card');
+            bikes.forEach(bike => {
+                if (brand === 'all' || bike.getAttribute('data-brand') === brand) {
+                    bike.style.display = 'block';
+                } else {
+                    bike.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
 </body>
 </html>

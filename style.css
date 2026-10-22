@@ -2,7 +2,7 @@
    ОБЩИЕ СТИЛИ (для всех страниц)
    ========================================== */
 body {
-    background-color: #624afc;
+    background-color: #c2ddfb;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 30px;
@@ -272,4 +272,60 @@ body {
     .part-info-text ul {
         text-align: left;
     }
+}
+
+/* ==========================================
+   ФИЛЬТР БРЕНДОВ НА ГЛАВНОЙ СТРАНИЦЕ
+   ========================================== */
+.brands-section {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.brands-section h3 {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.brands-grid {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.brand-card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 12px 24px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #444;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.brand-card:hover {
+    border-color: #007bff;
+    color: #007bff;
+    transform: translateY(-2px);
+}
+
+/* Стиль активной (выбранной) карточки бренда */
+.brand-card.active {
+    background-color: #007bff;
+    color: #ffffff;
+    border-color: #007bff;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+.bike-card span {
+    font-size: 13px;
+    color: #777;
+    display: block;
+    margin-top: 4px;
 }
